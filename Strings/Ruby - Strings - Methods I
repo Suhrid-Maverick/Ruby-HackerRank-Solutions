@@ -1,0 +1,32 @@
+def process_text(arr)
+    arr.join(' ').split.join(' ')
+  end
+
+def __check_output
+  unless Object.respond_to?(:process_text, true)
+    puts 'You must define the appropriate method.'
+    exit(0)
+  end
+
+  s1 = ["  Ancient rocks 
+", "
+ from Canada tell something.   
+"]
+  s2 = ["	Brain Signals!   
+", " Is that all you have?   "]
+  s3 = ["Winner takes it all in science, ", " but loser?"]
+
+  a1 = 'Ancient rocks from Canada tell something.'
+  a2 = 'Brain Signals! Is that all you have?'
+  a3 = 'Winner takes it all in science, but loser?'
+
+  ans = [s1, s2, s3].map { |x| process_text(x) }
+
+  unless ans == [a1, a2, a3]
+    puts 'Did you miss any whitespace, newline or forgot to join?'
+    exit(0)
+  end
+end
+
+__check_output
+puts 'Hooray! You have completed the challenge!'
